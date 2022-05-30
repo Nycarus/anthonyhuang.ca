@@ -1,6 +1,7 @@
 import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import { StyledAppBar, TitleTypography, ButtonTypography, } from "./header.style"
+import DiamondIcon from '@mui/icons-material/Diamond';
 
 export default class MainNavBar extends React.Component {
     render(){
@@ -9,7 +10,7 @@ export default class MainNavBar extends React.Component {
                 <StyledAppBar>
                     <Toolbar variant="dense">
                         <TitleTypography variant="h6" noWrap component="a" href="/">
-                            Anthony Huang
+                            <DiamondIcon/> Anthony Huang
                         </TitleTypography>
 
                         <div>

@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.1",
     "gatsby": "^4.10.3",
     "gatsby-plugin-styled-components": "^5.10.0",

@@ -9,7 +9,7 @@ export default function Layout ({ children }) {
     const theme = createTheme({
         palette : {
             primary : {
-                main : '#9a30b5',
+                main : '#6200EE',
             },
             secondary : {
                 main : '#1466ce',
