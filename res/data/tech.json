@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Bootstrap",
+        "type": "Framework",
+        "image": "../images/icon/bootstrap.svg"
+    },
+    {
+        "name": "Bulma",
+        "type": "Framework",
+        "image": "../images/icon/bulma.svg"
+    },
+    {
+        "name": "C++",
+        "type": "Language",
+        "image": "../images/icon/cplusplus.svg"
+    },
+    {
+        "name": "CSS3",
+        "type": "Language",
+        "image": "../images/icon/css3.svg"
+    },
+    {
+        "name": "Dart",
+        "type": "Language",
+        "image": "../images/icon/dart.svg"
+    },
+    {
+        "name": "Firebase",
+        "type": "Database",
+        "image": "../images/icon/firebase.svg"
+    },
+    {
+        "name": "Flutter",
+        "type": "Framework",
+        "image": "../images/icon/flutter.svg"
+    },
+    {
+        "name": "Git",
+        "type": "Version Control",
+        "image": "../images/icon/git.svg"
+    },
+    {
+        "name": "HTML5",
+        "type": "Language",
+        "image": "../images/icon/html5.svg"
+    },
+    {
+        "name": "Java",
+        "type": "Language",
+        "image": "../images/icon/java.svg"
+    },
+    {
+        "name": "Javascript",
+        "type": "Language",
+        "image": "../images/icon/javascript.svg"
+    },
+    {
+        "name": "MaterialUI",
+        "type": "Framework",
+        "image": "../images/icon/materialui.svg"
+    },
+    {
+        "name": "MongoDB",
+        "type": "Database",
+        "image": "../images/icon/mongodb.svg"
+    },
+    {
+        "name": "NodeJS",
+        "type": "Framework",
+        "image": "../images/icon/nodejs.svg"
+    },
+    {
+        "name": "PostgreSQL",
+        "type": "Database",
+        "image": "../images/icon/postgresql.svg"
+    },
+    {
+        "name": "Python",
+        "type": "Language",
+        "image": "../images/icon/python.svg"
+    },
+    {
+        "name": "React",
+        "type": "Framework",
+        "image": "../images/icon/react.svg"
+    },
+    {
+        "name": "SQLite",
+        "type": "Database",
+        "image": "../images/icon/sqlite.svg"
+    }
+]

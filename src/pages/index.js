@@ -10,17 +10,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 export default function IndexPage () {
     return (
         <Layout>
-            <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center" 
-            spacing={2}
-            style = {{
-                paddingTop: 50,
-                minHeight: "50vh",
-            }}
-            >   
+            <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2} style = {{ paddingTop: 50, minHeight: "50vh"}}>   
                 <Grid item>
                     <Typography align="center" style={{fontSize:60, fontFamily:"monospace", fontWeight: 100, letterSpacing:7}}>Anthony Huang</Typography>
                 </Grid>
@@ -28,7 +18,7 @@ export default function IndexPage () {
                 <Grid item>
                     <Typography align="center" style={{fontSize:20, fontFamily:"monospace", fontWeight: 200, justifyContent:"center"}}>Recent Computer Science Graduate From Ontario Tech University</Typography>
                 </Grid>
-
+                
                 <Grid container direction="row" justifyContent="center" alignItems="center" item spacing={3} style={{
                         paddingTop: 40,
                     }}>

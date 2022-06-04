@@ -1,0 +1,26 @@
+[
+    {
+        "title": "project-template-entry",
+        "project-type": [
+            {
+                "name": "web-dev"
+            }
+        ],
+        "slug": "project-entry",
+        "source": "https://www.github.com/",
+        "demo-link": "https://www.github.com/",
+        "images": [
+            {
+                "image": "../images/image/project.jpg"
+            }
+        ],
+        "format-type": "standard",
+        "status": "complete",
+        "description": "This is a boilerplate project entry.",
+        "tech-stack": [
+            {
+                "name": "Python"
+            }
+        ]
+    }
+]
