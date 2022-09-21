@@ -10,22 +10,28 @@ export default function Layout ({ children }) {
 
     var isMobile = false;
 
-    if (typeof window !== `undefined`){ 
-        const [width, setWidth] = React.useState(window.innerWidth);
+    let defaultHeight;
+    let defaultWidth;
 
-        function handleWindowSizeChange() {
-            setWidth(window.innerWidth);
-        }
-
-        React.useEffect(() => {
-            window.addEventListener('resize', handleWindowSizeChange);
-            return () => {
-                window.removeEventListener('resize', handleWindowSizeChange);
-            }
-        }, [handleWindowSizeChange]);
-
-        isMobile = width <= 1000;
+    if (typeof window !== `undefined`){
+        defaultHeight = window.innerHeight
+        defaultWidth = window.innerWidth
     }
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+
+    React.useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, [handleWindowSizeChange]);
+
+    isMobile = width <= 1000;
 
     return (
         <React.Fragment>

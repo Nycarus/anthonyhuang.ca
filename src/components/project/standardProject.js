@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import ImageCarousel from "../imageCarousel/imageCarousel";
 
 import {ContentBox, ProjectTitleTypography, TagGrid, TagBox, TagText, TitleToBodyDivider, DescriptionBox, DescriptionTypography, ProjectInfoBox} from "./standardProject.style";
