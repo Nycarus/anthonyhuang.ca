@@ -1,8 +1,7 @@
 module.exports = {
-  pathPrefix: "/anthonyhuang.ca",
   siteMetadata: {
-    title: ``,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Anthony Huang's Website`,
+    siteUrl: `https://www.anthonyhuang.ca/`
   },
   plugins: [
     `gatsby-theme-material-ui`,
