@@ -58,7 +58,7 @@ export default function DesktopProjectListView(props) {
                                             {/* View Project Buttons */}
                                             <ProjectButtonGrid container>
                                                 <ProjectButtonGridItem item>
-                                                    <IconButton href={`/project/${node.slug}`} target="_blank" rel="noopener noreferrer">
+                                                    <IconButton href={`/project/${node.slug}`}>
                                                         <ProjectButtonBox bgcolor="warning.main">
                                                             <ProjectButtonTypography>
                                                                 More Information

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {IconButton, Paper} from '@mui/material';
 
 export const ContentPaper = styled(Paper)`
-    position: relative;
+    position: relative !important;
     display: flex;
     justify-content: space-between;
     align-content: center;

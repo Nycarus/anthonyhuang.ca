@@ -119,7 +119,7 @@ export const ProjectImageBoxOuter = styled(Box)`
 `;
 
 export const ProjectImage = styled.img`
-    position: relative;
+    position: relative !important;
     width: fit-content;
     height: fit-content;
     max-width: 100%;

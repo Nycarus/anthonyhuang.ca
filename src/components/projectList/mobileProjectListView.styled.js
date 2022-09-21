@@ -25,7 +25,7 @@ export const ProjectTypography = styled(Typography)`
     margin-right: 3px;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: black;
+    color: white !important;
     font-size: 20px !important;
     font-weight: 600 !important;
 `;

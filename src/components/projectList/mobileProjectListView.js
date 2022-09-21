@@ -13,15 +13,15 @@ export default function MobileProjectListView(props) {
                 props.data.allProjectJson.edges.map(({node}) => (
                     <Box key={node.title + "mobile"}>{
                         node.images ?
-                        <ProjectButton href={`/project/${node.slug}`} target="_blank" rel="noopener noreferrer">
-                            <Paper style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundImage:`linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.8)), url(${node.images[0].image.publicURL})`, backgroundSize: "cover", height: "40vw", width:"40vw"}}>
+                        <ProjectButton href={`/project/${node.slug}`}>
+                            <Paper style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundImage:`linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.8)), url(${node.images[0].image.publicURL})`, backgroundSize: "cover", height: "40vw", width:"40vw"}}>
                                 <ProjectTypography>
                                     {node.title}
                                 </ProjectTypography>
                             </Paper>
                         </ProjectButton>
                         :
-                        <ProjectButton href={`/project/${node.slug}`} target="_blank" rel="noopener noreferrer">
+                        <ProjectButton href={`/project/${node.slug}`}>
                             <ProjectPaperWithoutImage>
                                 <ProjectTypography>
                                     {node.title}
