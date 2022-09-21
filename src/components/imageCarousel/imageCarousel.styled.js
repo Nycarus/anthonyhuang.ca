@@ -10,6 +10,11 @@ export const ContentPaper = styled(Paper)`
     border: 1px solid;
 `
 
+export const MediaDiv = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const ImageDiv = styled.div`
     display: flex;
     align-items: center;
@@ -18,7 +23,7 @@ export const ImageDiv = styled.div`
 export const CarouselImage = styled.img`
     display: inline-block;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 80vh;
     vertical-align: middle;
 `
 

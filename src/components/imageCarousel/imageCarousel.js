@@ -3,7 +3,7 @@ import {IconButton} from '@mui/material';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-import {ContentPaper, ImageDiv, CarouselImage} from "./imageCarousel.styled";
+import {ContentPaper, ImageDiv, CarouselImage, MediaDiv} from "./imageCarousel.styled";
 
 
 export default class ImageCarousel extends React.Component {
@@ -30,7 +30,7 @@ export default class ImageCarousel extends React.Component {
                     <IconButton onClick={this.swapToPreviousSlide}>
                         <ArrowCircleLeftRoundedIcon/>
                     </IconButton>
-                    <ImageDiv>{
+                    <MediaDiv>{
                         this.props.media.map((media, index) => {
                             if(media.image){
                                 return (
@@ -42,7 +42,7 @@ export default class ImageCarousel extends React.Component {
                             else if (media.video_url){
                                 return (
                                     <ImageDiv>
-                                        {index === this.state.currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"100%"}}/>)}
+                                        {index === this.state.currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"80vh"}}/>)}
                                     </ImageDiv>
                                 );
                             }
@@ -51,7 +51,7 @@ export default class ImageCarousel extends React.Component {
                             }
                             
                         })
-                    }</ImageDiv>
+                    }</MediaDiv>
 
                     <IconButton onClick={this.swapToNextSlide}>
                         <ArrowCircleRightRoundedIcon/>
