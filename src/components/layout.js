@@ -8,20 +8,24 @@ import ThemeController from "../components/theme/theme";
 
 export default function Layout ({ children }) {
 
-    const [width, setWidth] = React.useState(window.innerWidth);
+    var isMobile = false;
 
-    function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
-    }
+    if (typeof window !== `undefined`){ 
+        const [width, setWidth] = React.useState(window.innerWidth);
 
-    React.useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
+        function handleWindowSizeChange() {
+            setWidth(window.innerWidth);
         }
-    }, [handleWindowSizeChange]);
 
-    const isMobile = width <= 1000;
+        React.useEffect(() => {
+            window.addEventListener('resize', handleWindowSizeChange);
+            return () => {
+                window.removeEventListener('resize', handleWindowSizeChange);
+            }
+        }, [handleWindowSizeChange]);
+
+        isMobile = width <= 1000;
+    }
 
     return (
         <React.Fragment>
