@@ -1,7 +1,7 @@
 import React from "react"
 import { Grid } from '@mui/material';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CategoryTypography, TechnologyTypography } from "./techStack.style";
+import { CategoryTypography, TechnologyTypography, TechnologyImage} from "./techStack.style";
 
 export default function TechStack() {
     const query = graphql`
@@ -42,20 +42,22 @@ export default function TechStack() {
                     return(
                         <Grid item>
                             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
+                                {/* name of the category */}
                                 <Grid item>
                                     <CategoryTypography>
                                         {category}
                                     </CategoryTypography>
                                 </Grid>
+
+                                {/* list of technologies in the category */}
                                 <Grid item>
                                     <Grid container direction="row" justifyContent="center" alignItems="center" item spacing={3}> {
-                                        // Iterating through every technology to be displayed
                                         dataByTech[category].map((node) => {
                                             return(
                                                 <Grid item>
                                                     <Grid container direction="column" justifyContent="center" alignItems="center">
                                                         <Grid item>
-                                                            {node.image ? <img src={node.image.publicURL} width="50px" height="50px" alt="image" loading="lazy"/> : <div/>}
+                                                            {node.image ? <TechnologyImage src={node.image.publicURL} loading="lazy"/> : <div/>}
                                                         </Grid>
                                                         <Grid item>
                                                             <TechnologyTypography>

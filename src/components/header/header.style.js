@@ -1,14 +1,17 @@
 import AppBar from '@mui/material/AppBar';
 import styled from "styled-components";
 import Typography from '@mui/material/Typography';
+import Toolbar from '@mui/material/Toolbar';
 
 export const StyledAppBar = styled(AppBar)`
     position: static;
-    height:45px;
+`
+
+export const StyledToolbar = styled(Toolbar)`
+    justify-content: space-between;
 `
 
 export const AppBarTypography = styled(Typography)`
-    flex-grow: 1;
     text-decoration: none;
     font-family: monospace;
     color: inherit;
@@ -34,5 +37,4 @@ export const DivMainContent = styled.div`
     flex-direction: column;
     min-height: 100vh;
     vertical-align:middle;
-    align-items: center;
 `

@@ -1,30 +1,35 @@
 import React from 'react';
 import MainNavBar from "./header/header";
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme , ThemeProvider } from '@mui/material/styles';
-import { DivMainContent } from "./header/header.style"
+import { DivMainContent } from "./header/header.style";
+
+import ThemeController from "../components/theme/theme";
+
 
 export default function Layout ({ children }) {
 
-    const theme = createTheme({
-        palette : {
-            primary : {
-                main : '#6200EE',
-            },
-            secondary : {
-                main : '#1466ce',
-                paper : '#fff',
-            }
-        },
-    });
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+
+    React.useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, [handleWindowSizeChange]);
+
+    const isMobile = width <= 1000;
 
     return (
         <React.Fragment>
-            <CssBaseline />
-            <ThemeProvider theme={theme}>
-                <MainNavBar/>
-                <DivMainContent> {children} </DivMainContent>
-            </ThemeProvider>
+            <ThemeController>
+                <CssBaseline/>
+                <MainNavBar isMobile={isMobile}/>
+                <DivMainContent> {React.cloneElement(children, {isMobile: isMobile})}</DivMainContent>
+            </ThemeController>
         </React.Fragment>
     )
 };

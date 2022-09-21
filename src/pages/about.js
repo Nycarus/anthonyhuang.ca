@@ -8,9 +8,12 @@ export default function AboutPage () {
     return (
         <Layout>
             <div style = {{ paddingTop: 100, paddingLeft: "20%", paddingRight: "20%", minHeight: "50vh"}}>
+                {/* about-me dialogue */}
                 <Typography align="center" display="block" style={{fontSize:20, fontFamily:"monospace", fontWeight: 200, justifyContent:"center"}}>
                     Hello, I am Anthony.
-                    <br/>
+                </Typography>
+
+                <Typography align="left" display="block" style={{fontSize:20, fontFamily:"monospace", fontWeight: 200, justifyContent:"center"}}>
                     <br/>
                     I am a hobbyist who has recently graduated from Ontario Tech University as a computer scientist. 
                     I love to create various software and applications, learning new skills and technologies to accomplish this goal.
@@ -25,7 +28,8 @@ export default function AboutPage () {
                 </Typography>
 
                 <Divider style={{paddingTop:35}}/>
-
+                
+                {/* List of technologies I have used */}
                 <div style={{paddingTop:35}}>
                     <TechStack/>
                 </div>

@@ -15,3 +15,8 @@ export const TechnologyTypography = styled (TechStackTypography)`
     font-size: 18px !important;
     font-weight: 450 !important;
 `
+
+export const TechnologyImage = styled.img`
+    width: 50px;
+    height: 50px;
+`

@@ -11,14 +11,18 @@ export default function IndexPage () {
     return (
         <Layout>
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2} style = {{ paddingTop: 50, minHeight: "50vh"}}>   
+                {/* Title */}
                 <Grid item>
                     <Typography align="center" style={{fontSize:60, fontFamily:"monospace", fontWeight: 100, letterSpacing:7}}>Anthony Huang</Typography>
                 </Grid>
 
+                {/* Description */}
                 <Grid item>
                     <Typography align="center" style={{fontSize:20, fontFamily:"monospace", fontWeight: 200, justifyContent:"center"}}>Recent Computer Science Graduate From Ontario Tech University</Typography>
                 </Grid>
                 
+                {/* Contact Info */}
+                {/* TODO: Clean up code */}
                 <Grid container direction="row" justifyContent="center" alignItems="center" item spacing={3} style={{
                         paddingTop: 40,
                     }}>
@@ -32,7 +36,7 @@ export default function IndexPage () {
                     </Grid>
                     <Grid item>
                         <IconButton aria-label="Email" >
-                            <a href="about" rel="noreferrer noopener" target="_blank" aria-label="Email">
+                            <a href="mailto:huang.anthony@outlook.com" rel="noreferrer noopener" target="_blank" aria-label="Email">
                                 <EmailIcon fontSize="large" color="primary"></EmailIcon>
                             </a>
                         </IconButton>
