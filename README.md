@@ -1,5 +1,4 @@
 ## anthonyhuang.ca
-#
 ### About the website:
 This is the source code for my personal website. Intended to be a short portfolio for my projects, although I am unable to include all the projects I have done. 
 
