@@ -10,15 +10,13 @@ export default function Layout ({ children }) {
 
     var isMobile = false;
 
-    let defaultHeight;
     let defaultWidth;
 
     if (typeof window !== `undefined`){
-        defaultHeight = window.innerHeight
         defaultWidth = window.innerWidth
     }
 
-    const [width, setWidth] = React.useState(window.innerWidth);
+    const [width, setWidth] = React.useState(defaultWidth);
 
     function handleWindowSizeChange() {
         setWidth(window.innerWidth);
