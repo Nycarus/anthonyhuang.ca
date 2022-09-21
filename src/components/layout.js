@@ -5,39 +5,45 @@ import { DivMainContent } from "./header/header.style";
 
 import ThemeController from "../components/theme/theme";
 
-
-export default function Layout ({ children }) {
-
-    var isMobile = false;
-
-    let defaultWidth;
-
-    if (typeof window !== `undefined`){
-        defaultWidth = window.innerWidth
+export default class Layout extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {width: 1001}
+        this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
     }
 
-    const [width, setWidth] = React.useState(defaultWidth);
-
-    function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
-    }
-
-    React.useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
+    componentDidMount(){
+        this.handleWindowSizeChange()
+        if (typeof window !== `undefined`){
+            window.addEventListener('resize', this.handleWindowSizeChange)
         }
-    }, [handleWindowSizeChange]);
+    }
 
-    isMobile = width <= 1000;
+    componentWillUnmount(){
+        if (typeof window !== `undefined`){
+            window.removeEventListener('resize', this.handleWindowSizeChange)
+        }
+    }
 
-    return (
-        <React.Fragment>
-            <ThemeController>
-                <CssBaseline/>
-                <MainNavBar isMobile={isMobile}/>
-                <DivMainContent> {React.cloneElement(children, {isMobile: isMobile})}</DivMainContent>
-            </ThemeController>
-        </React.Fragment>
-    )
+    handleWindowSizeChange() {
+        if (typeof window !== `undefined`){
+            this.setState({width: window.innerWidth});
+        }
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <ThemeController>
+                    <CssBaseline/>
+                    <MainNavBar isMobile={this.state.width <= 1000}/>
+                    <DivMainContent> {
+                        React.Children.map(this.props.children, (child) => {
+                            return React.cloneElement(child, {isMobile: this.state.width <= 1000});
+                        })
+                    }</DivMainContent>
+                </ThemeController>
+            </React.Fragment>
+        )
+    }
 };
