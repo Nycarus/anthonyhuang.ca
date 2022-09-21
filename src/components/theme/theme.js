@@ -4,32 +4,10 @@ import { createTheme , ThemeProvider } from '@mui/material/styles';
 export default class ThemeController extends React.Component {
     constructor(props) {
         super(props);
-        if (typeof window !== 'undefined') {
-            this.state = localStorage.getItem("themeValue") ? {"mode": localStorage.getItem("themeValue")} : {"mode": "light"};
-        }
-        else{
-            this.state = {"mode": "light"}
-        }
+        this.state = {"mode": "light"}
         this.changeTheme = this.changeTheme.bind(this);
-    }
 
-    changeTheme() {
-        if (this.state.mode === "light") {
-            this.setState({"mode": "dark"});
-            if (typeof window !== 'undefined') {
-                localStorage.setItem("themeValue", "dark");
-            }
-        }
-        else {
-            this.setState({"mode": "light"});
-            if (typeof window !== 'undefined') {
-                localStorage.setItem("themeValue", "light");
-            }
-        }
-    }
-
-    render() {
-        const lightTheme = createTheme({
+        this.lightTheme = createTheme({
             palette : {
                 primary : {
                     main : '#6200EE',
@@ -53,16 +31,39 @@ export default class ThemeController extends React.Component {
             }
         });
 
-        const darkTheme = createTheme({
+        this.darkTheme = createTheme({
             palette : {
                 mode: "dark"
             }
         });
+    }
 
+    componentDidMount() {
+        if (typeof window !== `undefined`){
+            this.setState(localStorage.getItem("themeValue") ? {"mode": localStorage.getItem("themeValue")} : {"mode": "light"})
+        }
+    }
+
+    changeTheme() {
+        if (this.state.mode === "light") {
+            this.setState({"mode": "dark"});
+            if (typeof window !== 'undefined') {
+                localStorage.setItem("themeValue", "dark");
+            }
+        }
+        else {
+            this.setState({"mode": "light"});
+            if (typeof window !== 'undefined') {
+                localStorage.setItem("themeValue", "light");
+            }
+        }
+    }
+
+    render() {
         return(
-            <ThemeProvider theme={this.state.mode === "light" ? lightTheme : darkTheme}>
+            <ThemeProvider theme={this.state.mode === "light" ? this.lightTheme : this.darkTheme}>
                 {React.Children.map(this.props.children, (child) => {
-                    return React.cloneElement(child, {"changeTheme": this.changeTheme});
+                    return React.cloneElement(child, {"changeTheme": this.changeTheme, "themeColour" : this.state.mode});
                 })}
             </ThemeProvider>
         );

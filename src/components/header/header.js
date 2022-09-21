@@ -34,7 +34,7 @@ export default class MainNavBar extends React.Component {
                                 Projects
                             </ButtonTypography>
 
-                            <Switch color="secondary" onChange={this.props.changeTheme}/>
+                            <Switch color="secondary" onChange={this.props.changeTheme} checked={this.props.themeColour === "light"}/>
                         </div>
                     </StyledToolbar>
                 </StyledAppBar>
