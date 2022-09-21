@@ -5,7 +5,7 @@ import { ContentBox, ContentTitle, ContentGrid, ContentGridItem,ProjectGrid, Pro
     ProjectTypeGrid, ProjectTypeGridItem, ProjectTypeBox, ProjectTypeTypography,
     ProjectButtonGrid, ProjectButtonBox, ProjectButtonGridItem, ProjectButtonTypography,
     ProjectDescriptionBox, ProjectDescriptionTypography,
-    ProjectImageBoxOuter, ProjectImage } from './desktopProjectListView.style'
+    ProjectImageBoxOuter, ProjectImage } from './desktopProjectListView.styled'
 
 export default function DesktopProjectListView(props) {
     return(

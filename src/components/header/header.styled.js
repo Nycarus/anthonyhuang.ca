@@ -4,16 +4,17 @@ import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 
 export const StyledAppBar = styled(AppBar)`
-    position: static;
+    position: static !important;
 `
 
 export const StyledToolbar = styled(Toolbar)`
     justify-content: space-between;
+    height: 60px;
 `
 
 export const AppBarTypography = styled(Typography)`
-    text-decoration: none;
-    font-family: monospace;
+    text-decoration: none !important;
+    font-family: monospace !important;
     color: inherit;
 `
 
@@ -32,9 +33,9 @@ export const ButtonTypography = styled(AppBarTypography)`
 `
 
 export const DivMainContent = styled.div`
-    margin-top: 45px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    vertical-align:middle;
+    min-height: 100vh !important;
+    vertical-align: middle;
 `

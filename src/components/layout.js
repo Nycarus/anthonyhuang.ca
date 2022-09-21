@@ -1,7 +1,7 @@
 import React from 'react';
 import MainNavBar from "./header/header";
 import CssBaseline from '@mui/material/CssBaseline';
-import { DivMainContent } from "./header/header.style";
+import { DivMainContent } from "./header/header.styled";
 
 import ThemeController from "../components/theme/theme";
 

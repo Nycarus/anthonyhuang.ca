@@ -7,7 +7,7 @@ import TechStack from '../components/techStack/techStack'
 export default function AboutPage () {
     return (
         <Layout>
-            <div style = {{ paddingTop: 100, paddingLeft: "20%", paddingRight: "20%", minHeight: "50vh"}}>
+            <div style = {{ paddingTop: 100, maxWidth: "80vw", width: "1500px", minHeight: "50vh", margin: "0 auto"}}>
                 {/* about-me dialogue */}
                 <Typography align="center" display="block" style={{fontSize:20, fontFamily:"monospace", fontWeight: 200, justifyContent:"center"}}>
                     Hello, I am Anthony.

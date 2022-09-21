@@ -3,7 +3,7 @@ import {IconButton} from '@mui/material';
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
-import {ContentPaper, ImageDiv, CarouselImage} from "./imageCarousel.style";
+import {ContentPaper, ImageDiv, CarouselImage} from "./imageCarousel.styled";
 
 
 export default class ImageCarousel extends React.Component {

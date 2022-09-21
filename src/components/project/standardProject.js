@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from '@mui/material';
 import ImageCarousel from "../imageCarousel/imageCarousel";
 
-import {ContentBox, ProjectTitleTypography, TagGrid, TagBox, TagText, TitleToBodyDivider, DescriptionBox, DescriptionTypography, ProjectInfoBox} from "./standardProject.style";
+import {ContentBox, ProjectTitleTypography, TagGrid, TagBox, TagText, TitleToBodyDivider, DescriptionBox, DescriptionTypography, ProjectInfoBox} from "./standardProject.styled";
 
 export default function StandardProject(props) {
     return (

@@ -1,7 +1,7 @@
 import React from "react"
 import { Grid } from '@mui/material';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CategoryTypography, TechnologyTypography, TechnologyImage} from "./techStack.style";
+import { CategoryTypography, TechnologyTypography, TechnologyImage} from "./techStack.styled";
 
 export default function TechStack() {
     const query = graphql`

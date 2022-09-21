@@ -10,8 +10,8 @@ export const ContentBox = styled(Box)`
 
 export const ContentTitle = styled(Typography)`
     text-align: left;
-    font-weight: 500;
-    font-size: 28px;
+    font-weight: 500 !important;
+    font-size: 28px !important;
     padding-bottom: 30px;
 `;
 
@@ -40,8 +40,8 @@ export const ProjectInfoBox = styled(Box)`
 
 export const ProjectTitle = styled(Typography)`
     text-align: left;
-    font-weight: 550;
-    font-size: 32px;
+    font-weight: 550 !important;
+    font-size: 32px !important;
     padding-left: 10px;
 `;
 
@@ -59,14 +59,14 @@ export const ProjectTypeGridItem = styled(Grid)`
 export const ProjectTypeBox = styled(Box)`
     width: fit-content;
     margin: 1px;
-    border-radius: 2px;
+    border-radius: 2px !important;
 `
 
 export const ProjectTypeTypography = styled(Typography)`
     color: #fff;
     padding: 5px;
-    font-size: 13px;
-    font-weight:650;
+    font-size: 13px !important;
+    font-weight:650 !important;
 `
 
 export const ProjectButtonGrid = styled(Grid)`
@@ -93,8 +93,8 @@ export const ProjectButtonBox = styled(Box)`
 export const ProjectButtonTypography = styled(Typography)`
     text-align: center;
     color: #fff;
-    font-size: 15px;
-    font-weight: 650;
+    font-size: 15px !important;
+    font-weight: 650 !important;
 `;
 
 export const ProjectDescriptionBox = styled(Box)`
@@ -104,7 +104,7 @@ export const ProjectDescriptionBox = styled(Box)`
 `;
 
 export const ProjectDescriptionTypography = styled(Typography)`
-    font-size: 15px;
+    font-size: 15px !important;
     max-width: 800px;
 `
 

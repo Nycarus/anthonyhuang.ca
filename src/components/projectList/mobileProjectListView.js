@@ -2,7 +2,7 @@ import React from "react"
 
 import { Box, Paper } from '@mui/material';
 
-import { ContentTitle, ContentGrid, ProjectButton, ProjectTypography, ProjectPaperWithoutImage } from "./mobileProjectListView.style";
+import { ContentTitle, ContentGrid, ProjectButton, ProjectTypography, ProjectPaperWithoutImage } from "./mobileProjectListView.styled";
 
 export default function MobileProjectListView(props) {
 
@@ -14,7 +14,7 @@ export default function MobileProjectListView(props) {
                     <Box key={node.title + "mobile"}>{
                         node.images ?
                         <ProjectButton href={`/project/${node.slug}`} target="_blank" rel="noopener noreferrer">
-                            <Paper style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundImage:`linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.8)), url(${node.images[0].image.publicURL})`, backgroundSize: "cover", height: "45vw", width:"45vw"}}>
+                            <Paper style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundImage:`linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.8)), url(${node.images[0].image.publicURL})`, backgroundSize: "cover", height: "40vw", width:"40vw"}}>
                                 <ProjectTypography>
                                     {node.title}
                                 </ProjectTypography>

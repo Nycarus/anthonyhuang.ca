@@ -1,7 +1,7 @@
 import React from 'react';
 import {IconButton, Box, Switch, Grid, List, ListItem, ListItemButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.style"
+import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.styled"
 import DiamondIcon from '@mui/icons-material/Diamond';
 
 export default class MainNavBar extends React.Component {
@@ -81,7 +81,7 @@ export default class MainNavBar extends React.Component {
                                 </ListItem>
                             </List>
                             :
-                            <div/>
+                            null
                         }
                     </Grid>
                 </StyledAppBar>

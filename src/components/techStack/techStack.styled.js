@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import styled from "styled-components";
 
 export const TechStackTypography = styled(Typography)`
-    font-family: monospace;
+    font-family: monospace !important;
     color: inherit;
 `;
 

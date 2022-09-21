@@ -9,7 +9,7 @@ export const ContentBox = styled(Box)`
 
 export const ProjectTitleTypography = styled(Typography)`
     text-align: center;
-    font-size: 40px;
+    font-size: 40px !important;
 `
 
 export const TagGrid = styled(Grid)`
@@ -29,8 +29,8 @@ export const TagBox = styled(Box)`
 export const TagText = styled(Typography)`
     color: #fff;
     padding: 5px;
-    font-size: 18px;
-    font-weight: 650;
+    font-size: 18px !important;
+    font-weight: 650 !important;
 `
 
 export const TitleToBodyDivider = styled(Divider)`
@@ -43,7 +43,7 @@ export const DescriptionBox = styled(Box)`
 `
 
 export const DescriptionTypography = styled(Typography)`
-    font-size: 18px;
+    font-size: 18px !important;
     white-space: normal;
     word-wrap: break-word;
     white-space: pre-wrap;

@@ -3,8 +3,8 @@ import { Typography, IconButton, Grid, Paper } from "@mui/material";
 
 export const ContentTitle = styled(Typography)`
     text-align: center;
-    font-weight: 500;
-    font-size: 28px;
+    font-weight: 500 !important;
+    font-size: 28px !important;
     padding-bottom: 30px;
 `;
 
@@ -26,15 +26,15 @@ export const ProjectTypography = styled(Typography)`
     text-overflow: ellipsis;
     overflow: hidden;
     color: black;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 20px !important;
+    font-weight: 600 !important;
 `;
 
 export const ProjectPaperWithoutImage = styled(Paper)`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vw;
-    width: 45vw;
+    height: 40vw;
+    width: 40vw;
     background-color: white;
 `
