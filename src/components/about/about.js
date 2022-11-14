@@ -48,7 +48,9 @@ export default function AboutMe () {
                     </AboutMeDescriptionDiv>
 
                     <ProjectButtonDiv>
-                        <ProjectButton>Check out my past projects</ProjectButton>
+                        <ProjectButton component="a" href="/projects">
+                            Check out my past projects
+                        </ProjectButton>
                     </ProjectButtonDiv>
                 </AboutMeBody>
             </AboutMeCard>
