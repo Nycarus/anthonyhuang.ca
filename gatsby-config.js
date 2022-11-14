@@ -15,6 +15,12 @@ module.exports = {
         name: 'data',
         path: './res'
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`,`/projects/*`],
+      },
+    },
   ]
 };
