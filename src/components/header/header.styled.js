@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 
 export const StyledAppBar = styled(AppBar)`
-    position: static !important;
+    position: fixed !important;
 `
 
 export const StyledToolbar = styled(Toolbar)`
@@ -33,7 +33,8 @@ export const ButtonTypography = styled(AppBarTypography)`
 `
 
 export const DivMainContent = styled.div`
-    margin-top: 40px;
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh !important;

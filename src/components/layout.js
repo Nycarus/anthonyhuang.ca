@@ -1,49 +1,53 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import MainNavBar from "./header/header";
 import CssBaseline from '@mui/material/CssBaseline';
 import { DivMainContent } from "./header/header.styled";
+import { createTheme , ThemeProvider } from '@mui/material/styles';
+import Footer from './footer/footer';
 
-import ThemeController from "../components/theme/theme";
+const Layout = (props) => {
+    const [width, setWidth] = useState(null);
 
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {width: 1001}
-        this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this)
+    const handleResize = () => {
+        setWidth(window.innerWidth)
     }
 
-    componentDidMount(){
-        this.handleWindowSizeChange()
-        if (typeof window !== `undefined`){
-            window.addEventListener('resize', this.handleWindowSizeChange)
+    useLayoutEffect(() => {
+        if (typeof window !== 'undefined'){
+            window.addEventListener("resize", handleResize)
+            handleResize()
+            return () => {window.removeEventListener("resize", handleResize)}
         }
-    }
+    },[])
 
-    componentWillUnmount(){
-        if (typeof window !== `undefined`){
-            window.removeEventListener('resize', this.handleWindowSizeChange)
-        }
-    }
+    const darkTheme = createTheme({
+        palette : {
+            mode:"dark",
+            primary: {
+                main:"#2979ff"
+            },
+            secondary: {
+                main: '#f50057',
+            }
+        },
+        contrastThreshold: 3,
+        tonalOffset: 0.2
+    });
 
-    handleWindowSizeChange() {
-        if (typeof window !== `undefined`){
-            this.setState({width: window.innerWidth});
-        }
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <ThemeController>
-                    <CssBaseline/>
-                    <MainNavBar isMobile={this.state.width <= 1000}/>
-                    <DivMainContent> {
-                        React.Children.map(this.props.children, (child) => {
-                            return React.cloneElement(child, {isMobile: this.state.width <= 1000});
-                        })
-                    }</DivMainContent>
-                </ThemeController>
-            </React.Fragment>
-        )
-    }
+    return (
+        <React.Fragment>
+            <ThemeProvider theme={darkTheme}>
+                <CssBaseline/>
+                <MainNavBar isMobile={width <= 1000}/>
+                <DivMainContent> {
+                    React.Children.map(props.children, (child) => {
+                        return React.cloneElement(child, {isMobile: width <= 1000});
+                    })
+                }</DivMainContent>
+                <Footer/>
+            </ThemeProvider>
+        </React.Fragment>
+    )
 };
+
+export default Layout;

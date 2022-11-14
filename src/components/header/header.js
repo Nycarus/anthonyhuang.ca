@@ -1,59 +1,30 @@
-import React from 'react';
-import {IconButton, Box, Switch, Grid, List, ListItem, ListItemButton} from '@mui/material';
+import React, { useState } from 'react';
+import {IconButton, Box, Grid, List, ListItem, ListItemButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.styled"
 import DiamondIcon from '@mui/icons-material/Diamond';
 
-export default class MainNavBar extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {isDropDownMenuOpen: false}
-        this.toggleDropDownMenu = this.toggleDropDownMenu.bind(this);
+const MainNavBar = (props) => {
+    const [isDropDownMenuOpen, setDropDownMenuOpen] = useState(false);
+
+    const toggleDropDownMenu = () => {
+        setDropDownMenuOpen(!isDropDownMenuOpen)
     }
 
-    toggleDropDownMenu(){
-        this.setState({isDropDownMenuOpen: !this.state.isDropDownMenuOpen})
-    }
+    if (props.isMobile) {
 
-    render(){
+        // Mobile View
         return (
-            !this.props.isMobile ?
             <Box component="nav">
                 <StyledAppBar>
-                    <StyledToolbar variant="dense">
-                        <TitleTypography variant="h6" noWrap component="a" href="/">
-                            <DiamondIcon/> Anthony Huang
-                        </TitleTypography>
-
-                        <div>
-                            <ButtonTypography variant="h6" noWrap component="a" href="/about">
-                                About
-                            </ButtonTypography>
-
-                            <ButtonTypography variant="h6" noWrap component="a" href="/projects">
-                                Projects
-                            </ButtonTypography>
-
-                            <Switch color="secondary" onChange={this.props.changeTheme} checked={this.props.themeColour === "light"}/>
-                        </div>
-                    </StyledToolbar>
-                </StyledAppBar>
-            </Box>
-
-            :
-
-            <Box component="nav">
-                 <StyledAppBar>
                     <Grid container direction="column">
                         <StyledToolbar variant="dense">
-                            <TitleTypography variant="h6" noWrap component="a" href="/">
+                            <TitleTypography variant="h6" noWrap component="a" href="/#home">
                                 <DiamondIcon/> Anthony Huang
                             </TitleTypography>
 
                             <div>
-                                <Switch color="secondary" onChange={this.props.changeTheme}/>
-
-                                <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={this.toggleDropDownMenu}>
+                                <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={toggleDropDownMenu}>
                                     <MenuIcon />
                                 </IconButton>
                             </div>
@@ -63,17 +34,17 @@ export default class MainNavBar extends React.Component {
 
                         
                         {
-                            this.state.isDropDownMenuOpen ? 
+                            isDropDownMenuOpen ? 
                             <List>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton href="/about">
+                                    <ListItemButton href="/#about" onClick={toggleDropDownMenu}>
                                         <ButtonTypography variant="h6" noWrap>
                                             About
                                         </ButtonTypography>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton href="/projects">
+                                    <ListItemButton href="/projects" onClick={toggleDropDownMenu}>
                                         <ButtonTypography variant="h6" noWrap>
                                             Projects
                                         </ButtonTypography>
@@ -86,6 +57,33 @@ export default class MainNavBar extends React.Component {
                     </Grid>
                 </StyledAppBar>
             </Box>
-        );
-    };
+        )
+    }
+    else{
+
+        // Window View
+        return(
+            <Box component="nav">
+                <StyledAppBar>
+                    <StyledToolbar variant="dense">
+                        <TitleTypography variant="h6" noWrap component="a" href="/#home">
+                            <DiamondIcon/> Anthony Huang
+                        </TitleTypography>
+
+                        <div>
+                            <ButtonTypography variant="h6" noWrap component="a" href="/#about">
+                                About
+                            </ButtonTypography>
+
+                            <ButtonTypography variant="h6" noWrap component="a" href="/projects">
+                                Projects
+                            </ButtonTypography>
+                        </div>
+                    </StyledToolbar>
+                </StyledAppBar>
+            </Box>
+        )
+    }
 };
+
+export default MainNavBar;

@@ -1,22 +1,16 @@
 import styled from "styled-components";
-import { Typography, IconButton, Grid, Paper } from "@mui/material";
-
-export const ContentTitle = styled(Typography)`
-    text-align: center;
-    font-weight: 500 !important;
-    font-size: 28px !important;
-    padding-bottom: 30px;
-`;
+import { Typography, IconButton, Grid, Paper, Box } from "@mui/material";
 
 export const ContentGrid = styled(Grid)`
     direction: row;
     justify-content: center;
 `;
 
+export const ProjectBox = styled(Box)`
+    margin: 1px;
+`;
+
 export const ProjectButton = styled(IconButton)`
-    height: 45vw;
-    width: 45vw;
-    margin: 2vw;
 `;
 
 export const ProjectTypography = styled(Typography)`
@@ -30,11 +24,14 @@ export const ProjectTypography = styled(Typography)`
     font-weight: 600 !important;
 `;
 
-export const ProjectPaperWithoutImage = styled(Paper)`
+export const ProjectPaper = styled(Paper)`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vw;
-    width: 40vw;
-    background-color: white;
-`
+    height: 45vw;
+    width: 45vw;
+    background-size: cover !important;
+    background-image: url(${props => props.imageURL}) !important;
+    background-color: rgba(0, 0, 0, .65) !important;
+    background-blend-mode: darken !important;
+`;

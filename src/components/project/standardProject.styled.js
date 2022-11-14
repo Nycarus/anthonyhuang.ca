@@ -5,6 +5,7 @@ export const ContentBox = styled(Box)`
     max-width: 95vw;
     width: 1000px;
     margin: auto;
+    padding-top: 40px;
 `;
 
 export const ProjectTitleTypography = styled(Typography)`

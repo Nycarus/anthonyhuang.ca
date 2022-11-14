@@ -1,34 +1,22 @@
 import React from "react"
 
-import { Box, Paper } from '@mui/material';
-
-import { ContentTitle, ContentGrid, ProjectButton, ProjectTypography, ProjectPaperWithoutImage } from "./mobileProjectListView.styled";
+import { ContentGrid, ProjectBox, ProjectButton, ProjectTypography, ProjectPaper } from "./mobileProjectListView.styled";
 
 export default function MobileProjectListView(props) {
 
     return(
         <React.Fragment>
-            <ContentTitle>Projects</ContentTitle>
             <ContentGrid container>{
                 props.data.allProjectJson.edges.map(({node}) => (
-                    <Box key={node.title + "mobile"}>{
-                        node.images ?
+                    <ProjectBox key={node.title + "mobile"}>{
                         <ProjectButton href={`/project/${node.slug}`}>
-                            <Paper style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundImage:`linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.8)), url(${node.images[0].image.publicURL})`, backgroundSize: "cover", height: "40vw", width:"40vw"}}>
+                            <ProjectPaper imageURL={node.images[0].image.publicURL}>
                                 <ProjectTypography>
                                     {node.title}
                                 </ProjectTypography>
-                            </Paper>
+                            </ProjectPaper>
                         </ProjectButton>
-                        :
-                        <ProjectButton href={`/project/${node.slug}`}>
-                            <ProjectPaperWithoutImage>
-                                <ProjectTypography>
-                                    {node.title}
-                                </ProjectTypography>
-                            </ProjectPaperWithoutImage>
-                        </ProjectButton>
-                    }</Box>
+                    }</ProjectBox>
                 ))
             }</ContentGrid>
         </React.Fragment>

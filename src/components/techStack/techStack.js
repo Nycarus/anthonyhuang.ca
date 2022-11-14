@@ -20,12 +20,12 @@ export default function TechStack() {
         }
     `
     const data = useStaticQuery(query);
-    const dataByTech = new Object();
+    const dataByTech = {};
 
     // Sorting data by it's category of technology
-    data.allTechJson.edges.map(({node}) => {
+    data.allTechJson.edges.forEach(({node}) => {
         if (!dataByTech[node.type]) {
-            dataByTech[node.type] = new Array()
+            dataByTech[node.type] = []
         }
 
         dataByTech[node.type].push(node);

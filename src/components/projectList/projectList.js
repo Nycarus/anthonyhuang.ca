@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import DesktopProjectListView from "./desktopProjectListView";
 import MobileProjectListView from "./mobileProjectListView";
+import { ContentDiv } from "./projectList.styled";
 
 export default function ProjectList(props) {
 
@@ -41,9 +42,9 @@ export default function ProjectList(props) {
     const data = useStaticQuery(query);
 
     return(
-        <div style={{paddingTop:"40px"}}>{
+        <ContentDiv>{
             /* Window View of the project list */
             !props.isMobile ? <DesktopProjectListView data={data}/> : <MobileProjectListView data={data}/>
-        }</div>
+        }</ContentDiv>
     );
 }

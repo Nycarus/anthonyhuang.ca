@@ -1,41 +1,26 @@
 import styled from "styled-components";
 
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Paper} from "@mui/material";
 
 export const ContentBox = styled(Box)`
-    max-width: 95vw;
-    width: 2000px;
-    margin: 0 auto;
+    display: flex;
 `;
 
-export const ContentTitle = styled(Typography)`
-    text-align: left;
-    font-weight: 500 !important;
-    font-size: 28px !important;
-    padding-bottom: 30px;
+export const ContentPaper = styled(Paper)`
+    margin: 20px;
 `;
 
 export const ContentGrid = styled(Grid)`
     direction: column;
-`;
-
-export const ContentGridItem = styled(Grid)`
-    padding-top: 10px;
-    padding-bottom: 60px;
-`;
-
-export const ProjectGrid = styled(Grid)`
-    direction: row;
-    justify-content: space-between;
+    max-width: 2000px;
+    margin: 0 auto;
+    justify-content: center;
 `;
 
 export const ProjectInfoBox = styled(Box)`
-    max-width: 60vw;
-    max-height: 30vh;
-    min-height: 300px;
-    width: 1400px;
-    height: 400px;
-    padding-right: 20px;
+    flex-shrink: 1;
+    height: 300px;
+    width: auto;
 `;
 
 export const ProjectTitle = styled(Typography)`
@@ -87,7 +72,7 @@ export const ProjectButtonBox = styled(Box)`
     align-items: center;
     justify-content: center;
     border-radius: 8px !important;
-    box-shadow: 2px 2px !important;
+    box-shadow: 2px 2px rgba(140,140,140,0.9) !important;
 `
 
 export const ProjectButtonTypography = styled(Typography)`
@@ -105,17 +90,28 @@ export const ProjectDescriptionBox = styled(Box)`
 
 export const ProjectDescriptionTypography = styled(Typography)`
     font-size: 15px !important;
-    max-width: 800px;
+    max-height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden;
+    
+    text-overflow: ellipsis;
+
+    white-space: normal;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 `
 
 export const ProjectImageBoxOuter = styled(Box)`
     display: flex;
-    max-height: 30vh;
-    max-width: 30vw;
+    max-height: 300px;
+    max-width: 300px;
+    min-width: 300px;
     min-height: 300px;
-    width: 400px;
-    height: 400px;
+    background: rgba(0, 0, 0, 0.5);
     justify-content: center; 
+    border-radius: 4px 0px 0px 4px !important;
 `;
 
 export const ProjectImage = styled.img`
