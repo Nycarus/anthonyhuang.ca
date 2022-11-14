@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "gatsby";
 import {IconButton, Box, Grid, List, ListItem, ListItemButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.styled"
@@ -19,7 +20,7 @@ const MainNavBar = (props) => {
                 <StyledAppBar>
                     <Grid container direction="column">
                         <StyledToolbar variant="dense">
-                            <TitleTypography variant="h6" noWrap component="a" href="/#home">
+                            <TitleTypography variant="h6" noWrap component={Link} to="/#home">
                                 <DiamondIcon/> Anthony Huang
                             </TitleTypography>
 
@@ -37,14 +38,14 @@ const MainNavBar = (props) => {
                             isDropDownMenuOpen ? 
                             <List>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton href="/#about" onClick={toggleDropDownMenu}>
+                                    <ListItemButton to="/#about" onClick={toggleDropDownMenu} component={Link}>
                                         <ButtonTypography variant="h6" noWrap>
                                             About
                                         </ButtonTypography>
                                     </ListItemButton>
                                 </ListItem>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton href="/projects" onClick={toggleDropDownMenu}>
+                                    <ListItemButton to="/projects" onClick={toggleDropDownMenu} component={Link}>
                                         <ButtonTypography variant="h6" noWrap>
                                             Projects
                                         </ButtonTypography>
@@ -66,16 +67,16 @@ const MainNavBar = (props) => {
             <Box component="nav">
                 <StyledAppBar>
                     <StyledToolbar variant="dense">
-                        <TitleTypography variant="h6" noWrap component="a" href="/#home">
+                        <TitleTypography variant="h6" noWrap component={Link} to="/#home">
                             <DiamondIcon/> Anthony Huang
                         </TitleTypography>
 
                         <div>
-                            <ButtonTypography variant="h6" noWrap component="a" href="/#about">
+                            <ButtonTypography variant="h6" noWrap component={Link} to="/#about">
                                 About
                             </ButtonTypography>
 
-                            <ButtonTypography variant="h6" noWrap component="a" href="/projects">
+                            <ButtonTypography variant="h6" noWrap component={Link} to="/projects">
                                 Projects
                             </ButtonTypography>
                         </div>

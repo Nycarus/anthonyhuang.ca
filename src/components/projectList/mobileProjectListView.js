@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link } from "gatsby";
 
 import { ContentGrid, ProjectBox, ProjectButton, ProjectTypography, ProjectPaper } from "./mobileProjectListView.styled";
 
@@ -9,7 +10,7 @@ export default function MobileProjectListView(props) {
             <ContentGrid container>{
                 props.data.allProjectJson.edges.map(({node}) => (
                     <ProjectBox key={node.title + "mobile"}>{
-                        <ProjectButton href={`/project/${node.slug}`}>
+                        <ProjectButton component={Link} to={`/project/${node.slug}`}>
                             <ProjectPaper imageURL={node.images[0].image.publicURL}>
                                 <ProjectTypography>
                                     {node.title}

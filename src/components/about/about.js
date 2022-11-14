@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby";
 import { Divider } from '@mui/material';
 import TechStack from '../techStack/techStack'
 
@@ -48,7 +49,7 @@ export default function AboutMe () {
                     </AboutMeDescriptionDiv>
 
                     <ProjectButtonDiv>
-                        <ProjectButton component="a" href="/projects">
+                        <ProjectButton component={Link} to="/projects">
                             Check out my past projects
                         </ProjectButton>
                     </ProjectButtonDiv>

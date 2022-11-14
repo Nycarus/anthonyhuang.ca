@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link } from "gatsby";
 import { IconButton } from '@mui/material';
 
 import { ContentPaper, ContentBox, ContentGrid, ProjectInfoBox, ProjectTitle,
@@ -60,7 +61,7 @@ export default function DesktopProjectListView(props) {
                                 {/* View Project Buttons */}
                                 <ProjectButtonGrid container>
                                     <ProjectButtonGridItem item>
-                                        <IconButton href={`/project/${node.slug}`}>
+                                        <IconButton component={Link} to={`/project/${node.slug}`}>
                                             <ProjectButtonBox bgcolor="warning.main">
                                                 <ProjectButtonTypography>
                                                     More Information
