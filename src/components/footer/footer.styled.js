@@ -18,6 +18,6 @@ export const FooterPaper = styled(Paper)`
 `;
 
 export const FooterTypography = styled(Typography)`
-    text-align: center !important;
+    text-align: center;
     vertical-align: middle;
 `

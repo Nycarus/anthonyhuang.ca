@@ -19,9 +19,9 @@ export const ProjectTypography = styled(Typography)`
     margin-right: 3px;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: white !important;
-    font-size: 20px !important;
-    font-weight: 600 !important;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 `;
 
 export const ProjectPaper = styled(Paper)`
@@ -30,8 +30,8 @@ export const ProjectPaper = styled(Paper)`
     align-items: center;
     height: 45vw;
     width: 45vw;
-    background-size: cover !important;
-    background-image: url(${props => props.imageURL}) !important;
-    background-color: rgba(0, 0, 0, .65) !important;
-    background-blend-mode: darken !important;
+    background-size: cover;
+    background-image: url(${props => props.imageURL});
+    background-color: rgba(0, 0, 0, .65);
+    background-blend-mode: darken;
 `;

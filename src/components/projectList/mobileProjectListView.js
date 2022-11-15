@@ -10,7 +10,7 @@ export default function MobileProjectListView(props) {
             <ContentGrid container>{
                 props.data.allProjectJson.edges.map(({node}) => (
                     <ProjectBox key={node.title + "mobile"}>{
-                        <ProjectButton component={Link} to={`/project/${node.slug}`}>
+                        <ProjectButton component={Link} to={`/projects/${node.slug}`}>
                             <ProjectPaper imageURL={node.images[0].image.publicURL}>
                                 <ProjectTypography>
                                     {node.title}

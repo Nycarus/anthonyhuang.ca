@@ -61,7 +61,7 @@ export default function DesktopProjectListView(props) {
                                 {/* View Project Buttons */}
                                 <ProjectButtonGrid container>
                                     <ProjectButtonGridItem item>
-                                        <IconButton component={Link} to={`/project/${node.slug}`}>
+                                        <IconButton component={Link} to={`/projects/${node.slug}`}>
                                             <ProjectButtonBox bgcolor="warning.main">
                                                 <ProjectButtonTypography>
                                                     More Information

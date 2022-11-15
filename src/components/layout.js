@@ -1,9 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react';
 import MainNavBar from "./header/header";
-import CssBaseline from '@mui/material/CssBaseline';
 import { DivMainContent } from "./header/header.styled";
-import { createTheme , ThemeProvider } from '@mui/material/styles';
 import Footer from './footer/footer';
+import ThemeController from './theme/theme';
 
 const Layout = (props) => {
     const [width, setWidth] = useState(null);
@@ -20,24 +19,9 @@ const Layout = (props) => {
         }
     },[])
 
-    const darkTheme = createTheme({
-        palette : {
-            mode:"dark",
-            primary: {
-                main:"#2979ff"
-            },
-            secondary: {
-                main: '#f50057',
-            }
-        },
-        contrastThreshold: 3,
-        tonalOffset: 0.2
-    });
-
     return (
         <React.Fragment>
-            <ThemeProvider theme={darkTheme}>
-                <CssBaseline/>
+            <ThemeController>
                 <MainNavBar isMobile={width <= 1000}/>
                 <DivMainContent> {
                     React.Children.map(props.children, (child) => {
@@ -45,7 +29,7 @@ const Layout = (props) => {
                     })
                 }</DivMainContent>
                 <Footer/>
-            </ThemeProvider>
+            </ThemeController>
         </React.Fragment>
     )
 };

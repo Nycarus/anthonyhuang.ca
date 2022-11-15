@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "gatsby";
-import {IconButton, Box, Grid, List, ListItem, ListItemButton} from '@mui/material';
+import {IconButton, Box, Grid, List, ListItem, ListItemButton, Switch} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.styled"
 import DiamondIcon from '@mui/icons-material/Diamond';
+import { ThemeContext } from '../../contexts/themeContext';
 
 const MainNavBar = (props) => {
     const [isDropDownMenuOpen, setDropDownMenuOpen] = useState(false);
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const toggleDropDownMenu = () => {
         setDropDownMenuOpen(!isDropDownMenuOpen)
@@ -25,6 +27,8 @@ const MainNavBar = (props) => {
                             </TitleTypography>
 
                             <div>
+                                <Switch color="secondary" onChange={toggleTheme} checked={theme === "light"}/>
+
                                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={toggleDropDownMenu}>
                                     <MenuIcon />
                                 </IconButton>
@@ -79,6 +83,8 @@ const MainNavBar = (props) => {
                             <ButtonTypography variant="h6" noWrap component={Link} to="/projects">
                                 Projects
                             </ButtonTypography>
+
+                            <Switch color="secondary" onChange={toggleTheme} checked={theme === "light"}/>
                         </div>
                     </StyledToolbar>
                 </StyledAppBar>

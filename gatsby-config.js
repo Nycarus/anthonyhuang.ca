@@ -22,5 +22,8 @@ module.exports = {
         precachePages: [`/`,`/projects/*`],
       },
     },
-  ]
+  ],
+  flags:{
+    DEV_SSR: true
+  }
 };
