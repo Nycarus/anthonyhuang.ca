@@ -35,12 +35,12 @@ export default function TechStack() {
     const categories = ['Language', 'Framework', 'Database', 'Version Control']
 
     return (
-        <div>
+        <React.Fragment>
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={5}> {
                 // Displaying the different technologies of every category
                 categories.map((category) => {
                     return(
-                        <Grid item>
+                        <Grid item key={"techStack_"+category}>
                             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
                                 {/* name of the category */}
                                 <Grid item>
@@ -54,7 +54,7 @@ export default function TechStack() {
                                     <Grid container direction="row" justifyContent="center" alignItems="center" item spacing={3}> {
                                         dataByTech[category].map((node) => {
                                             return(
-                                                <Grid item>
+                                                <Grid item key={"techStack_"+node.name}>
                                                     <Grid container direction="column" justifyContent="center" alignItems="center">
                                                         <Grid item>
                                                             {node.image ? <TechnologyImage src={node.image.publicURL} loading="lazy"/> : <div/>}
@@ -75,6 +75,6 @@ export default function TechStack() {
                     )
                 })
             }</Grid>
-        </div>
+        </React.Fragment>
     )
 }

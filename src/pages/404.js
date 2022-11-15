@@ -1,11 +1,12 @@
 import * as React from "react"
 import { Typography } from "@mui/material";
+import Layout from "../components/layout";
 
 // markup
 export default function ErrorPage () {
   return (
-    <React.Fragment>
+    <Layout>
       <Typography style={{paddingLeft:"20px"}}>This page does not exist.</Typography>
-    </React.Fragment>
+    </Layout>
   );
 }

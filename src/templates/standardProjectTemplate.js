@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import StandardProject from "../components/project/standardProject"
+import Layout from "../components/layout";
 
 export const query = graphql`
     query($slug: String!){
@@ -32,8 +33,8 @@ export const query = graphql`
 
 export default function StandardProjectTemplate ({ data }) {
     return (
-        <React.Fragment>
+        <Layout>
             <StandardProject data={data}/>
-        </React.Fragment>
+        </Layout>
     );
 }

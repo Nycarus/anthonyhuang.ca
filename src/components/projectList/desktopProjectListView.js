@@ -13,7 +13,7 @@ export default function DesktopProjectListView(props) {
         <ContentGrid>{
             props.data.allProjectJson.edges.map(({node}) => {
                 return(
-                    <ContentPaper>
+                    <ContentPaper key={node.title + "desktop"}>
                         <ContentBox>
                             {/* Project Image */}
                             <ProjectImageBoxOuter>
@@ -31,7 +31,7 @@ export default function DesktopProjectListView(props) {
                                     node.project_type ?
                                     node.project_type.map((type) => {
                                         return(
-                                            <ProjectTypeGridItem item>
+                                            <ProjectTypeGridItem item key={"desktopProject_type_"+type.name}>
                                                 <ProjectTypeBox bgcolor="primary.main">
                                                     <ProjectTypeTypography >{type.name}</ProjectTypeTypography>
                                                 </ProjectTypeBox>
@@ -47,7 +47,7 @@ export default function DesktopProjectListView(props) {
                                     node.tags ?
                                     node.tags.map((tag) => {
                                         return(
-                                            <ProjectTypeGridItem item>
+                                            <ProjectTypeGridItem item key={"desktopProject_tag_"+tag.name}>
                                                 <ProjectTypeBox bgcolor="secondary.main">
                                                     <ProjectTypeTypography>{tag.name}</ProjectTypeTypography>
                                                 </ProjectTypeBox>

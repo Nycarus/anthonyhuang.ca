@@ -2,11 +2,12 @@ import * as React from "react";
 import AboutMe from "../components/about/about";
 import Intro from "../components/intro/intro"
 import { Divider } from "@mui/material";
+import Layout from "../components/layout";
 
 // markup
 export default function IndexPage () {
     return (
-        <React.Fragment>
+        <Layout>
             <section id="home">
                 <Intro/>
             </section>
@@ -15,6 +16,6 @@ export default function IndexPage () {
                 <Divider/>
                 <AboutMe/>
             </section>
-        </React.Fragment>
+        </Layout>
     );
 };
