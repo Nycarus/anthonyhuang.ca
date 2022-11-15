@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { createTheme, ThemeProvider, StyledEngineProvider  } from '@mui/material/styles';
+import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeContext } from '../../contexts/themeContext';
 
@@ -54,6 +55,8 @@ const darkTheme = createTheme({
 const ThemeController = (props) => {
     const [theme, setTheme] = useState(null);
 
+    const systemDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
+
     const toggleTheme = () => {
         console.log("toggled");
         if (theme === "light") {
@@ -74,10 +77,17 @@ const ThemeController = (props) => {
                 setTheme(localTheme);
             }
             else{
-                setTheme("light");
+                if (systemDarkTheme){
+                    setTheme("dark");
+                    localStorage.setItem("themeValue", "dark");
+                }
+                else{
+                    setTheme("light");
+                    localStorage.setItem("themeValue", "light");
+                }
             }
         }
-    },[])
+    },[systemDarkTheme])
 
     return(
         <ThemeContext.Provider value={{theme, toggleTheme}}>
