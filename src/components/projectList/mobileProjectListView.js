@@ -8,8 +8,8 @@ export default function MobileProjectListView(props) {
     return(
         <React.Fragment>
             <ContentGrid container>{
-                props.data.allProjectJson.edges.map(({node}) => (
-                    <ProjectBox key={node.title + "mobile"}>{
+                props.data.allProjectJson.edges.map(({node}, index) => (
+                    <ProjectBox key={node.title + "mobile"} index={index}>{
                         <ProjectButton component={Link} to={`/projects/${node.slug}`}>
                             <ProjectPaper imageURL={node.images[0].image.publicURL}>
                                 <ProjectTypography>

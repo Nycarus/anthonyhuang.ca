@@ -1,13 +1,26 @@
 import { Button, Card, Typography } from "@mui/material";
-import styled, {css} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 
 import SchoolIcon from '@mui/icons-material/School';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import CodeIcon from '@mui/icons-material/Code';
 
+const fadeInandSlideIn = keyframes`
+    0% {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+`
+
 export const ContentDiv = styled.div`
     padding-top: 50px;
+    animation: 2s ease-out 0s 1 ${fadeInandSlideIn};
 `
 
 export const AboutMeCard = styled(Card)`
@@ -69,6 +82,11 @@ export const ProjectButtonDiv = styled.div`
 
 export const ProjectButton = styled(Button)`
     border: 3px solid;
+    text-align: center;
+
+    &:hover{
+        background-color: #CBC3E3;
+    }
 `
 
 export const AboutMeIcon = css`

@@ -38,7 +38,7 @@ const ImageCarousel = (props) => {
                         else if (media.video_url){
                             return (
                                 <ImageDiv key={"imageCarousel_video" + index}>
-                                    {index === currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"80vh"}}/>)}
+                                    {index === currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"100%"}}/>)}
                                 </ImageDiv>
                             );
                         }

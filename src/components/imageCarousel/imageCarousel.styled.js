@@ -6,8 +6,10 @@ export const ContentPaper = styled(Paper)`
     display: flex;
     justify-content: space-between;
     align-content: center;
-    height: 80vh;
+    height: "800px";
+    width: "auto";
     border: 1px solid;
+    background: rgba(0, 0, 0, 0.7);
 `
 
 export const MediaDiv = styled.div`
@@ -22,9 +24,10 @@ export const ImageDiv = styled.div`
 
 export const CarouselImage = styled.img`
     display: inline-block;
-    max-width: 100%;
-    max-height: 80vh;
+    max-width:100%;
+    max-height:100%;
     vertical-align: middle;
+    object-fit: cover;
 `
 
 export const CarouselButton = styled(IconButton)`

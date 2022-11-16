@@ -1,7 +1,7 @@
 import React from "react"
-import { Grid } from '@mui/material';
+import { Grid, Divider } from '@mui/material';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CategoryTypography, TechnologyTypography, TechnologyImage} from "./techStack.styled";
+import { ContentPaper, CategoryTypography, TechnologyTypography, TechnologyImage} from "./techStack.styled";
 
 export default function TechStack() {
     const query = graphql`
@@ -51,24 +51,29 @@ export default function TechStack() {
 
                                 {/* list of technologies in the category */}
                                 <Grid item>
+                                    
                                     <Grid container direction="row" justifyContent="center" alignItems="center" item spacing={3}> {
                                         dataByTech[category].map((node) => {
                                             return(
                                                 <Grid item key={"techStack_"+node.name}>
-                                                    <Grid container direction="column" justifyContent="center" alignItems="center">
+                                                    <ContentPaper>
                                                         <Grid item>
                                                             {node.image ? <TechnologyImage src={node.image.publicURL} loading="lazy"/> : <div/>}
                                                         </Grid>
+
+                                                        <Divider style={{width:'100%'}}/>
+                                                        
                                                         <Grid item>
                                                             <TechnologyTypography>
                                                                 {node.name}
                                                             </TechnologyTypography>
                                                         </Grid>
-                                                    </Grid>
+                                                    </ContentPaper>
                                                 </Grid>
                                             )
                                         })
                                     }</Grid>
+                                    
                                 </Grid>
                             </Grid>
                         </Grid>

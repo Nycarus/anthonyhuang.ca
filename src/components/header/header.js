@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link } from "gatsby";
-import {IconButton, Box, Grid, List, ListItem, ListItemButton} from '@mui/material';
+import {IconButton, Box, Grid, ListItem} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar, ThemeSwitch } from "./header.styled"
+import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar, ThemeSwitch, StyledList, StyledButton, StyledListItemButton } from "./header.styled"
 import DiamondIcon from '@mui/icons-material/Diamond';
 import { ThemeContext } from '../../contexts/themeContext';
 
@@ -22,9 +22,11 @@ const MainNavBar = (props) => {
                 <StyledAppBar>
                     <Grid container direction="column">
                         <StyledToolbar variant="dense">
-                            <TitleTypography variant="h6" noWrap component={Link} to="/#home">
-                                <DiamondIcon/> Anthony Huang
-                            </TitleTypography>
+                            <StyledButton component={Link} to="/#home">
+                                <TitleTypography variant="h6" noWrap component={Link} to="/#home">
+                                    <DiamondIcon/> Anthony Huang
+                                </TitleTypography>
+                            </StyledButton>
 
                             <div>
                                 <ThemeSwitch color="secondary" onChange={toggleTheme} checked={theme === "light"} themeType={theme}/>
@@ -37,27 +39,24 @@ const MainNavBar = (props) => {
                             
                         </StyledToolbar>
 
-                        
                         {
-                            isDropDownMenuOpen ? 
-                            <List>
+                            isDropDownMenuOpen &&
+                            <StyledList>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton to="/#about" onClick={toggleDropDownMenu} component={Link}>
+                                    <StyledListItemButton to="/#about" onClick={toggleDropDownMenu} component={Link}>
                                         <ButtonTypography variant="h6" noWrap>
                                             About
                                         </ButtonTypography>
-                                    </ListItemButton>
+                                    </StyledListItemButton>
                                 </ListItem>
                                 <ListItem sx={{color:"text.primary"}}>
-                                    <ListItemButton to="/projects" onClick={toggleDropDownMenu} component={Link}>
+                                    <StyledListItemButton to="/projects" onClick={toggleDropDownMenu} component={Link}>
                                         <ButtonTypography variant="h6" noWrap>
                                             Projects
                                         </ButtonTypography>
-                                    </ListItemButton>
+                                    </StyledListItemButton>
                                 </ListItem>
-                            </List>
-                            :
-                            null
+                            </StyledList>
                         }
                     </Grid>
                 </StyledAppBar>
@@ -71,18 +70,24 @@ const MainNavBar = (props) => {
             <Box component="nav">
                 <StyledAppBar>
                     <StyledToolbar variant="dense">
-                        <TitleTypography variant="h6" noWrap component={Link} to="/#home">
-                            <DiamondIcon/> Anthony Huang
-                        </TitleTypography>
+                        <StyledButton component={Link} to="/#home">
+                            <TitleTypography variant="h6" noWrap>
+                                <DiamondIcon/> Anthony Huang
+                            </TitleTypography>
+                        </StyledButton>
 
                         <div>
-                            <ButtonTypography variant="h6" noWrap component={Link} to="/#about">
-                                About
-                            </ButtonTypography>
+                            <StyledButton component={Link} to="/#about">
+                                <ButtonTypography variant="h6" noWrap>
+                                    About
+                                </ButtonTypography>
+                            </StyledButton>
 
-                            <ButtonTypography variant="h6" noWrap component={Link} to="/projects">
-                                Projects
-                            </ButtonTypography>
+                            <StyledButton component={Link} to="/projects">
+                                <ButtonTypography variant="h6" noWrap>
+                                    Projects
+                                </ButtonTypography>
+                            </StyledButton>
 
                             <ThemeSwitch color="secondary" onChange={toggleTheme} checked={theme === "light"} themeType={theme}/>
                         </div>

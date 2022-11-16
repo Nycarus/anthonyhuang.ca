@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
-import { IconButton } from '@mui/material';
 
 import { ContentPaper, ContentBox, ContentGrid, ProjectInfoBox, ProjectTitle,
     ProjectTypeGrid, ProjectTypeGridItem, ProjectTypeBox, ProjectTypeTypography,
     ProjectButtonGrid, ProjectButtonBox, ProjectButtonGridItem, ProjectButtonTypography,
     ProjectDescriptionBox, ProjectDescriptionTypography,
-    ProjectImageBoxOuter, ProjectImage } from './desktopProjectListView.styled'
+    ProjectImageBoxOuter, ProjectImage, ProjectIconButton } from './desktopProjectListView.styled'
 
 export default function DesktopProjectListView(props) {
     return(
         <ContentGrid>{
-            props.data.allProjectJson.edges.map(({node}) => {
+            props.data.allProjectJson.edges.map(({node}, index) => {
                 return(
-                    <ContentPaper key={node.title + "desktop"}>
+                    <ContentPaper key={node.title + "desktop"} index={index}>
                         <ContentBox>
                             {/* Project Image */}
                             <ProjectImageBoxOuter>
@@ -21,7 +20,7 @@ export default function DesktopProjectListView(props) {
                                 node.images ? <ProjectImage src={node.images[0].image.publicURL}/> : <div/>
                             }
                             </ProjectImageBoxOuter>
-
+                            
                             <ProjectInfoBox>
                                 {/* Project Title */}
                                 <ProjectTitle>{node.title}</ProjectTitle>
@@ -61,26 +60,26 @@ export default function DesktopProjectListView(props) {
                                 {/* View Project Buttons */}
                                 <ProjectButtonGrid container>
                                     <ProjectButtonGridItem item>
-                                        <IconButton component={Link} to={`/projects/${node.slug}`}>
+                                        <ProjectIconButton component={Link} to={`/projects/${node.slug}`}>
                                             <ProjectButtonBox bgcolor="warning.main">
                                                 <ProjectButtonTypography>
                                                     More Information
                                                 </ProjectButtonTypography>
                                             </ProjectButtonBox>
-                                        </IconButton>
+                                        </ProjectIconButton>
                                     </ProjectButtonGridItem>
                                     
                                     {
                                         /* Github link if there's one*/
                                         node.source ?
                                         <ProjectButtonGridItem item>
-                                            <IconButton href={node.source} target="_blank" rel="noopener noreferrer">
+                                            <ProjectIconButton href={node.source} target="_blank" rel="noopener noreferrer">
                                                 <ProjectButtonBox bgcolor="warning.main">
                                                     <ProjectButtonTypography>
                                                         Github
                                                     </ProjectButtonTypography>
                                                 </ProjectButtonBox>
-                                            </IconButton>
+                                            </ProjectIconButton>
                                         </ProjectButtonGridItem>
                                         :
                                         null

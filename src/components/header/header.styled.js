@@ -1,8 +1,8 @@
 import AppBar from '@mui/material/AppBar';
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
-import { Switch } from '@mui/material';
+import { Switch, Button, List, ListItemButton } from '@mui/material';
 
 export const StyledAppBar = styled(AppBar)`
     position: fixed;
@@ -19,19 +19,41 @@ export const AppBarTypography = styled(Typography)`
     color: inherit;
 `
 
+const highlight = keyframes`
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+      box-shadow: 0 0 50px #ccc;
+    }
+`
+
+export const StyledButton = styled(Button)`
+  margin: 5px;
+  &:hover{
+    animation: ${highlight} ease-in-out 0.3s forwards;
+  }
+`;
+
+export const StyledListItemButton = styled(ListItemButton)`
+  &:hover{
+    animation: ${highlight} ease-in-out 0.3s forwards;
+  }
+`;
+
 export const TitleTypography = styled(AppBarTypography)`
-    padding-left: 3%;
     font-size: 18px;
     font-weight: 600;
+    color: #fff;
+    text-align: center;
 `
 
 export const ButtonTypography = styled(AppBarTypography)`
     text-align: center;
-    padding: 10px;
     font-size: 15px;
     font-weight: 400;
     color: #fff;
-    padding-right: 28px;
 `
 
 export const DivMainContent = styled.div`
@@ -43,10 +65,32 @@ export const DivMainContent = styled.div`
     vertical-align: middle;
 `
 
+const dropDown = keyframes`
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scaleY(1.1);
+    }
+    85% {
+        transform: scaleY(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+    }
+`;
+
+export const StyledList = styled(List)`
+  animation: ${dropDown} 0.3s ease-in-out forwards;
+`;
+
 export const ThemeSwitch = styled(Switch)((props) => ({
     width: 62,
     height: 34,
     padding: 7,
+    animation: `$switchThemes`,
     '& .MuiSwitch-switchBase': {
       margin: 1,
       padding: 0,

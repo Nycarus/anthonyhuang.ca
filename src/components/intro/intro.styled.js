@@ -1,8 +1,21 @@
 import { Grid, Typography } from "@mui/material";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const fadeInandSlideIn = keyframes`
+    0% {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+`
 
 export const ContentDiv = styled.div`
     max-width: 95%;
+    animation: 1s ease-out 0s 1 ${fadeInandSlideIn};
 `
 
 export const ContentGrid = styled(Grid)`

@@ -1,13 +1,24 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-import { Box, Typography, Grid, Paper} from "@mui/material";
+import { Box, Typography, Grid, Paper, IconButton} from "@mui/material";
 
 export const ContentBox = styled(Box)`
     display: flex;
 `;
 
+const slideInFromLeft = keyframes`
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+`
+
 export const ContentPaper = styled(Paper)`
     margin: 20px;
+    animation: ${props=> props.index * 0.5 + "s"} ease-out 0s 1 ${slideInFromLeft};
 `;
 
 export const ContentGrid = styled(Grid)`
@@ -60,8 +71,22 @@ export const ProjectButtonGrid = styled(Grid)`
     direction: row;
 `;
 
+const highlight = keyframes`
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+      box-shadow: 0 0 50px #ccc;
+    }
+`
+
 export const ProjectButtonGridItem = styled(Grid)`
     padding-right: 8px;
+`;
+
+export const ProjectIconButton = styled(IconButton)`
+    
 `;
 
 export const ProjectButtonBox = styled(Box)`
@@ -75,6 +100,9 @@ export const ProjectButtonBox = styled(Box)`
     justify-content: center;
     border-radius: 8px;
     box-shadow: 2px 2px rgba(140,140,140,0.9);
+    &:hover{
+        animation: ${highlight} ease-in-out 0.3s forwards;
+    }
 `
 
 export const ProjectButtonTypography = styled(Typography)`
