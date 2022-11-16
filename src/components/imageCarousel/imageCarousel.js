@@ -30,15 +30,15 @@ const ImageCarousel = (props) => {
                     props.media.map((media, index) => {
                         if(media.image){
                             return (
-                                <ImageDiv>{
+                                <ImageDiv key={"imageCarousel_image" + index}>{
                                     index === currentIndex && (<CarouselImage src={media.image.publicURL} target="_blank" rel="noopener noreferrer"/>)
                                 }</ImageDiv>
                             );
                         }
                         else if (media.video_url){
                             return (
-                                <ImageDiv>
-                                    {index === currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"80vh"}}/>)}
+                                <ImageDiv key={"imageCarousel_video" + index}>
+                                    {index === currentIndex && (<iframe src={media.video_url} title={media.title} frameborder="0" allowfullscreen style={{width: "800px", maxWidth:"100%", height:"550px", maxHeight:"100%"}}/>)}
                                 </ImageDiv>
                             );
                         }

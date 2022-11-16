@@ -1,13 +1,24 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-import { Box, Typography, Grid, Paper} from "@mui/material";
+import { Box, Typography, Grid, Paper, IconButton} from "@mui/material";
 
 export const ContentBox = styled(Box)`
     display: flex;
 `;
 
+const slideInFromLeft = keyframes`
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+`
+
 export const ContentPaper = styled(Paper)`
     margin: 20px;
+    animation: ${props=> props.index * 0.5 + "s"} ease-out 0s 1 ${slideInFromLeft};
 `;
 
 export const ContentGrid = styled(Grid)`
@@ -21,12 +32,14 @@ export const ProjectInfoBox = styled(Box)`
     flex-shrink: 1;
     height: 300px;
     width: auto;
+    border-style: solid;
+    border-width: thin;
 `;
 
 export const ProjectTitle = styled(Typography)`
     text-align: left;
-    font-weight: 550 !important;
-    font-size: 32px !important;
+    font-weight: 550;
+    font-size: 32px;
     padding-left: 10px;
 `;
 
@@ -44,22 +57,36 @@ export const ProjectTypeGridItem = styled(Grid)`
 export const ProjectTypeBox = styled(Box)`
     width: fit-content;
     margin: 1px;
-    border-radius: 2px !important;
+    border-radius: 2px;
 `
 
 export const ProjectTypeTypography = styled(Typography)`
     color: #fff;
     padding: 5px;
-    font-size: 13px !important;
-    font-weight:650 !important;
+    font-size: 13px;
+    font-weight:650;
 `
 
 export const ProjectButtonGrid = styled(Grid)`
     direction: row;
 `;
 
+const highlight = keyframes`
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+      box-shadow: 0 0 50px #ccc;
+    }
+`
+
 export const ProjectButtonGridItem = styled(Grid)`
     padding-right: 8px;
+`;
+
+export const ProjectIconButton = styled(IconButton)`
+    
 `;
 
 export const ProjectButtonBox = styled(Box)`
@@ -71,15 +98,18 @@ export const ProjectButtonBox = styled(Box)`
     margin: 1px;
     align-items: center;
     justify-content: center;
-    border-radius: 8px !important;
-    box-shadow: 2px 2px rgba(140,140,140,0.9) !important;
+    border-radius: 8px;
+    box-shadow: 2px 2px rgba(140,140,140,0.9);
+    &:hover{
+        animation: ${highlight} ease-in-out 0.3s forwards;
+    }
 `
 
 export const ProjectButtonTypography = styled(Typography)`
     text-align: center;
     color: #fff;
-    font-size: 15px !important;
-    font-weight: 650 !important;
+    font-size: 15px;
+    font-weight: 650;
 `;
 
 export const ProjectDescriptionBox = styled(Box)`
@@ -89,11 +119,11 @@ export const ProjectDescriptionBox = styled(Box)`
 `;
 
 export const ProjectDescriptionTypography = styled(Typography)`
-    font-size: 15px !important;
+    font-size: 15px;
     max-height: 100px;
     display: -webkit-box;
-    -webkit-line-clamp: 4 !important;
-    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     
     text-overflow: ellipsis;
@@ -111,11 +141,13 @@ export const ProjectImageBoxOuter = styled(Box)`
     min-height: 300px;
     background: rgba(0, 0, 0, 0.5);
     justify-content: center; 
-    border-radius: 4px 0px 0px 4px !important;
+    border-radius: 4px 0px 0px 4px;
+    border-style: solid;
+    border-width: thin;
 `;
 
 export const ProjectImage = styled.img`
-    position: relative !important;
+    position: relative;
     width: fit-content;
     height: fit-content;
     max-width: 100%;

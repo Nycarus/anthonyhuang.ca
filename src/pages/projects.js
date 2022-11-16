@@ -1,7 +1,6 @@
 import * as React from "react"
-import Layout from '../components/layout'
 import ProjectList from '../components/projectList/projectList';
-
+import Layout from "../components/layout";
 // markup
 export default function ProjectsPage () {
     return (

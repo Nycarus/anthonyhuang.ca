@@ -18,7 +18,7 @@ export default function StandardProject(props) {
                     props.data.projectJson.project_type ?
                     props.data.projectJson.tags.map((tag) => {
                         return(
-                        <Grid item>
+                        <Grid item key={"standardProject_"+tag.name}>
                             <TagBox bgcolor="secondary.main">
                                 <TagText>{tag.name}</TagText>
                             </TagBox>

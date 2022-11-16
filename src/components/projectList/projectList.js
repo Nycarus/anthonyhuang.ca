@@ -4,8 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import DesktopProjectListView from "./desktopProjectListView";
 import MobileProjectListView from "./mobileProjectListView";
 import { ContentDiv } from "./projectList.styled";
+import { DeviceContext } from "../../contexts/appConfigContext";
 
-export default function ProjectList(props) {
+const ProjectList = (props) => {
 
     const query = graphql`
         query GetAllProjectItems {
@@ -42,9 +43,15 @@ export default function ProjectList(props) {
     const data = useStaticQuery(query);
 
     return(
-        <ContentDiv>{
-            /* Window View of the project list */
-            !props.isMobile ? <DesktopProjectListView data={data}/> : <MobileProjectListView data={data}/>
-        }</ContentDiv>
+        <DeviceContext.Consumer>
+            {({isMobile}) => (
+                <ContentDiv>{
+                    /* Window View of the project list */
+                    isMobile ? <MobileProjectListView data={data}/> : <DesktopProjectListView data={data}/>
+                }</ContentDiv>
+            )}
+        </DeviceContext.Consumer>
     );
 }
+
+export default ProjectList;

@@ -1,6 +1,6 @@
 import * as React from "react"
-import Layout from '../components/layout'
 import { Typography } from "@mui/material";
+import Layout from "../components/layout";
 
 // markup
 export default function ErrorPage () {
