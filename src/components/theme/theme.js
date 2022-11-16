@@ -4,24 +4,28 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeContext } from '../../contexts/themeContext';
 
+const htmlConfig = {
+    scrollBehavior: "smooth",
+    scrollPaddingTop: "60px"
+}
+
 const lightTheme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: {
-                html: {
-                    scrollBehavior: "smooth",
-                    scrollPaddingTop: "60px"
-                }
+                html: htmlConfig
             }
         }
     },
     palette : {
         mode:"light",
         primary: {
-            main:"#2979ff"
+            main:"#5c6bc0",
+            contrastText: '#fff'
         },
         secondary: {
-            main: '#f50057'
+            main: '#301b70',
+            contrastText: '#fff'
         }
     },
     contrastThreshold: 3,
@@ -32,20 +36,19 @@ const darkTheme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: {
-                html: {
-                    scrollBehavior: "smooth",
-                    scrollPaddingTop: "60px"
-                }
+                html: htmlConfig
             }
         }
     },
     palette : {
         mode:"dark",
         primary: {
-            main:"#2979ff"
+            main:"#5c6bc0",
+            contrastText: '#fff'
         },
         secondary: {
-            main: '#f50057'
+            main: '#301b70',
+            contrastText: '#fff'
         }
     },
     contrastThreshold: 3,

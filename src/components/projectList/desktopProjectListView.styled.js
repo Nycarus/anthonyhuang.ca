@@ -21,6 +21,8 @@ export const ProjectInfoBox = styled(Box)`
     flex-shrink: 1;
     height: 300px;
     width: auto;
+    border-style: solid;
+    border-width: thin;
 `;
 
 export const ProjectTitle = styled(Typography)`
@@ -112,6 +114,8 @@ export const ProjectImageBoxOuter = styled(Box)`
     background: rgba(0, 0, 0, 0.5);
     justify-content: center; 
     border-radius: 4px 0px 0px 4px;
+    border-style: solid;
+    border-width: thin;
 `;
 
 export const ProjectImage = styled.img`

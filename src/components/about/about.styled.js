@@ -19,7 +19,9 @@ export const AboutMeCard = styled(Card)`
     margin: 0 auto;
     padding-right: 20px;
     padding-left: 20px;
-    box-shadow: 0px 2px 2px rgba(140,140,140,0.9);
+    box-shadow: 2px 3px 3px rgba(140,140,140,0.9);
+    border-style: solid;
+    border-width: thin;
 `
 
 export const AboutMeTypography = styled(Typography)`

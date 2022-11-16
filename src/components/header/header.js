@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link } from "gatsby";
-import {IconButton, Box, Grid, List, ListItem, ListItemButton, Switch} from '@mui/material';
+import {IconButton, Box, Grid, List, ListItem, ListItemButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar } from "./header.styled"
+import { StyledAppBar, TitleTypography, ButtonTypography, StyledToolbar, ThemeSwitch } from "./header.styled"
 import DiamondIcon from '@mui/icons-material/Diamond';
 import { ThemeContext } from '../../contexts/themeContext';
 
@@ -27,7 +27,7 @@ const MainNavBar = (props) => {
                             </TitleTypography>
 
                             <div>
-                                <Switch color="secondary" onChange={toggleTheme} checked={theme === "light"}/>
+                                <ThemeSwitch color="secondary" onChange={toggleTheme} checked={theme === "light"} themeType={theme}/>
 
                                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={toggleDropDownMenu}>
                                     <MenuIcon />
@@ -84,7 +84,7 @@ const MainNavBar = (props) => {
                                 Projects
                             </ButtonTypography>
 
-                            <Switch color="secondary" onChange={toggleTheme} checked={theme === "light"}/>
+                            <ThemeSwitch color="secondary" onChange={toggleTheme} checked={theme === "light"} themeType={theme}/>
                         </div>
                     </StyledToolbar>
                 </StyledAppBar>
