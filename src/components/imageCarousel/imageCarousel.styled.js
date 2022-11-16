@@ -6,8 +6,8 @@ export const ContentPaper = styled(Paper)`
     display: flex;
     justify-content: space-between;
     align-content: center;
-    height: "800px";
-    width: "auto";
+    height: 800px;
+    width: auto;
     border: 1px solid;
     background: rgba(0, 0, 0, 0.7);
 `
