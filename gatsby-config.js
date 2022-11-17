@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Anthony Huang's Website`,
-    siteUrl: `https://www.anthonyhuang.ca/`
+    siteUrl: `https://www.anthonyhuang.ca/`,
+    description: `Anthony Huang's personal portfolio and blog website`,
+    author: `Anthony Huang`,
   },
   plugins: [
     `gatsby-theme-material-ui`,

@@ -21,7 +21,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     result.data.allProjectJson.edges.forEach(({node}) => {
         actions.createPage({
             path:`/projects/${node.slug}`,
-            component: path.resolve("./src/templates/standardProjectTemplate.js"),
+            component: path.resolve("./src/templates/standardProjectTemplate.jsx"),
             context: { 
                 slug: node.slug 
             }

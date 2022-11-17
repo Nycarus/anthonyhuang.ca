@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import StandardProject from "../components/project/standardProject"
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 export const query = graphql`
     query($slug: String!){
@@ -31,10 +32,16 @@ export const query = graphql`
     }
 `;
 
-export default function StandardProjectTemplate ({ data }) {
+const StandardProjectTemplate = ({ data }) => {
     return (
         <Layout>
             <StandardProject data={data}/>
         </Layout>
     );
 }
+
+export const Head = ({data}) => (
+    <Seo title={data.projectJson.title}/>
+)
+
+export default StandardProjectTemplate;
